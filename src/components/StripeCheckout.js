@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { loadStripe } from '@stripe/stripe-js'
 import { CardElement, useStripe, Elements, useElements } from '@stripe/react-stripe-js'
@@ -13,6 +13,8 @@ const promise = loadStripe(process.env.REACT_APP_AUTH_STRIPE_PUBLIC_KEY)
 const CheckoutForm = () => {
 	const { cart, total_amount, shipping_fee, clearCart } = useCartContext()
 	const { myUser } = useUserContext()
+  const [countdown, setCountdown] = useState(10)
+  const timerId = useRef()
 	const navigate = useNavigate()
 	// Stripe stuff
 	const [succeeded, setSucceed] = useState(false)
@@ -59,7 +61,6 @@ const CheckoutForm = () => {
 	}, [])
 
 	const handleChange = async (event) => {
-		console.log(event)
 		setDisabled(event.empty)
 		setError(event.error ? event.error.message : '')
 	}
@@ -78,12 +79,20 @@ const CheckoutForm = () => {
       setError(null)
       setProcessing(false)
       setSucceed(true)
-      setTimeout(() => {
-        clearCart()
-        navigate('/')
-      }, 10000)
+      timerId.current = setInterval(() => {
+        setCountdown(prev => prev - 1)
+      }, 1000)
     }
   }
+
+  useEffect(() => {
+    if(countdown < 0) {
+      clearCart()
+      navigate('/')
+      clearInterval(timerId.current)
+    }
+    // eslint-disable-next-line
+  }, [countdown])
 
 	return (
 		<div>
@@ -93,7 +102,7 @@ const CheckoutForm = () => {
 						Thank you, <br />
 						Your payment was successful!
 					</h4>
-					<p>Redirect to home page shortly</p>
+					<p>Redirect to home page after {countdown}</p>
 				</article>
 			) : (
 				<article>
