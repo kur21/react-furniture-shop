@@ -187,7 +187,7 @@ gap: 2rem;
 - add all to .env
 
 ```js
-AIRTABLE_API_KEY=
+AIRTABLE_API_TOKEN=
 AIRTABLE_BASE=
 AIRTABLE_TABLE=
 ```
@@ -230,7 +230,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const Airtable = require('airtable-node');
-const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
+const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_TOKEN })
   .base(process.env.AIRTABLE_BASE)
   .table(process.env.AIRTABLE_TABLE);
 
@@ -323,7 +323,7 @@ export const products_url = '/.netlify/functions/products';
 require('dotenv').config();
 const Airtable = require('airtable-node');
 
-const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
+const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_TOKEN })
   .base(process.env.AIRTABLE_BASE)
   .table(process.env.AIRTABLE_TABLE);
 
@@ -353,7 +353,7 @@ functions/single-product
 require('dotenv').config();
 const Airtable = require('airtable-node');
 
-const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
+const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_TOKEN })
   .base(process.env.AIRTABLE_BASE)
   .table(process.env.AIRTABLE_TABLE);
 

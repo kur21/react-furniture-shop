@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 /*
 =============== 
 Variables
@@ -6,30 +7,30 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(22, 28%, 21%);
-  --clr-primary-2: hsl(22, 28%, 29%);
-  --clr-primary-3: hsl(22, 28%, 37%);
-  --clr-primary-4: hsl(22, 28%, 45%);
+  --clr-primary-1: #134e4a;
+  --clr-primary-2: #115e59;
+  --clr-primary-3: #0f766e;
+  --clr-primary-4: #0d9488;
   /* primary/main color */
-  --clr-primary-5: hsl(22, 31%, 52%);
+  --clr-primary-5: #14b8a6;
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(22, 31%, 60%);
-  --clr-primary-7: hsl(22, 31%, 67%);
-  --clr-primary-8: hsl(20, 31%, 74%);
-  --clr-primary-9: hsl(22, 31%, 81%);
-  --clr-primary-10: hsl(22, 31%, 88%);
+  --clr-primary-6: #2dd4bf;
+  --clr-primary-7: #5eead4;
+  --clr-primary-8: #99f6e4;
+  --clr-primary-9: #ccfbf1;
+  --clr-primary-10: #f0fdfa;
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-1: #171717;
+  --clr-grey-2: #262626;
+  --clr-grey-3: #404040;
+  --clr-grey-4: #525252;
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-5: #737373;
+  --clr-grey-6: #a3a3a3;
+  --clr-grey-7: #d4d4d4;
+  --clr-grey-8: #e5e5e5;
+  --clr-grey-9: #f5f5f5;
+  --clr-grey-10: #fafafa;
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -58,8 +59,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -70,6 +70,7 @@ ul {
 }
 a {
   text-decoration: none;
+  outline: none;
 }
 hr {
   border: none;
@@ -103,6 +104,9 @@ h5 {
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
+}
+button {
+  font-family: inherit;
 }
 @media screen and (min-width: 800px) {
   h1 {

@@ -39,7 +39,7 @@ const Wrapper = styled.section`
 	}
 	.btn {
 		display: block;
-		width: 148px;
+		width: fit-content;
 		margin: 0 auto;
 		text-align: center;
 	}

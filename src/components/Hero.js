@@ -1,21 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg from '../assets/hero-bcg.jpg'
+import heroBcg2 from '../assets/hero-bcg-2.jpg'
 
 const Hero = () => {
 	return (
 		<Wrapper className="section-center">
 			<article className="content">
-        <h1>Design your <br/> comfort zone</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aperiam dolorum nisi quis sint repellat odio fugiat. Repellat quisquam odio nulla nam nesciunt provident? Nam obcaecati hic eligendi voluptate eos.</p>
-        <Link to='/products' className='btn hero-btn'>shop now</Link>
-      </article>
-      <article className="img-container">
-        <img src={heroBcg} alt="nice table" className='main-img' />
-        <img src={heroBcg2} alt="person working" className='accent-img' />
-      </article>
+				<h1>
+					We Enjoy
+					<br />
+					Our Gadgets
+				</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus labore cupiditate velit
+					voluptas numquam alias commodi, explicabo provident recusandae ad, facilis doloribus, dicta nam
+					exercitationem sit iste. Maiores, blanditiis.
+				</p>
+				<Link to="/products" className="btn hero-btn">
+					shop now
+				</Link>
+			</article>
+			<article className="img-container">
+				<img src={heroBcg} alt="nice table" className="main-img" />
+				<img src={heroBcg2} alt="person working" className="accent-img" />
+			</article>
 		</Wrapper>
 	)
 }
@@ -55,7 +65,7 @@ const Wrapper = styled.section`
 		}
 		.main-img {
 			width: 100%;
-			height: 550px;
+			height: 520px;
 			position: relative;
 			border-radius: var(--radius);
 			display: block;
@@ -63,7 +73,7 @@ const Wrapper = styled.section`
 		}
 		.accent-img {
 			position: absolute;
-			bottom: 0;
+			bottom: 25px;
 			left: 0;
 			width: 250px;
 			transform: translateX(-50%);
@@ -75,7 +85,7 @@ const Wrapper = styled.section`
 			width: 10%;
 			height: 80%;
 			background: var(--clr-primary-9);
-			bottom: 0%;
+			bottom: 8%;
 			left: -8%;
 			border-radius: var(--radius);
 		}
